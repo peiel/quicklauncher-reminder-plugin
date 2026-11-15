@@ -19,6 +19,6 @@
 
 ## 开发
 
-运行 `ruby tests/test_reminder.rb` 执行离线协议和边界测试。通过标准输入读取一行 JSON，输出一行 JSON；所有动态文字由 JSON 编码，不执行输入内容。
+运行 `ruby tests/test_reminder.rb` 执行离线协议和边界测试。通过标准输入读取一行 JSON，输出一行 JSON；无效输入使用 `error` 返回清晰的用法或错误提示。所有动态文字由 JSON 编码，不执行输入内容。
 
 MIT 协议，参见 LICENSE。

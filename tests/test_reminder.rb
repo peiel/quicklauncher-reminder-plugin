@@ -15,13 +15,13 @@ class ReminderTest < Minitest::Test
     assert_equal 2_592_000, request('30天 提交报告')[:seconds]
   end
 
-  def test_invalid_input_is_a_message
+  def test_invalid_input_is_an_error
     ['', '10m', '0m 内容', '31天 内容', '1.5h 内容', "1h 内容\n下一行"].each do |input|
-      assert_equal 'message', request(input)[:action], input
+      assert_equal 'error', request(input)[:action], input
     end
-    assert_equal 'message', request("2m 内容\n下一行")[:action]
-    assert_equal 'message', request('1m ' + '字' * 201)[:action]
-    assert_equal 'message', QuickLauncherReminder.response('version' => 2)[:action]
+    assert_equal 'error', request("2m 内容\n下一行")[:action]
+    assert_equal 'error', request('1m ' + '字' * 201)[:action]
+    assert_equal 'error', QuickLauncherReminder.response('version' => 2)[:action]
   end
 
   def test_input_is_data_and_does_not_become_code

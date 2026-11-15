@@ -3,7 +3,7 @@
   "name": "定时提醒",
   "description": "在指定时间后通过系统通知提醒",
   "keyword": "remind",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "QuickLauncher",
   "runtime": "ruby",
   "entry": "main.rb",
